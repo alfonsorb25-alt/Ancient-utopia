@@ -1,35 +1,26 @@
-export const GAME_CONFIG = {
-  WORLD_SIZE: 15000, // 15 km
+console.log("Ancient Utopia Quest");
 
-  PLAYER: {
-    walkSpeed: 6,
-    runSpeed: 12,
-    jumpForce: 14,
-    gravity: -24
+const GAME_CONFIG = {
+  worldSize: 15000,
+  playerSpeed: 5,
+  jumpForce: 8.5,
+
+  flight: {
+    normal: 1.5,
+    sonic: 3.0,
+    light: 4.5,
+    max: 5.0
   },
 
-  FLIGHT: {
-    speed1: 2.0,
-    speed2: 3.0,
-    speed3: 4.5,
-    maxSpeed: 5.0
-  },
-
-  TELEPORT: {
-    range: 80,
+  teleport: {
     cooldown: 3000,
-    maxSeals: 3
+    maxDistance: 80
   },
 
-  WORLD: {
-    chunks: 64,
-    biomeCount: 3,
-    portals: 2,
-    ruins: 50,
-    villages: 20,
-    caves: 100
+  portals: {
+    enabled: true,
+    count: 2
   }
 };
 
-console.log("Ancient Utopia Quest Initialized");
-primer núcleo del juego
+export default GAME_CONFIG;
