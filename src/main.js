@@ -1,26 +1,25 @@
-console.log("Ancient Utopia Quest");
+import { WorldGenerator } from "./world/WorldGenerator.js";
+import { PortalSystem } from "./world/PortalSystem.js";
+import { BiomeSystem } from "./world/BiomeSystem.js";
 
-const GAME_CONFIG = {
-  worldSize: 15000,
-  playerSpeed: 5,
-  jumpForce: 8.5,
+class AncientUtopiaQuest {
+  constructor() {
+    this.world = new WorldGenerator();
+    this.portals = new PortalSystem();
+    this.biomes = new BiomeSystem();
 
-  flight: {
-    normal: 1.5,
-    sonic: 3.0,
-    light: 4.5,
-    max: 5.0
-  },
+    console.log("Ancient Utopia Quest iniciado");
 
-  teleport: {
-    cooldown: 3000,
-    maxDistance: 80
-  },
-
-  portals: {
-    enabled: true,
-    count: 2
+    this.initialize();
   }
-};
 
-export default GAME_CONFIG;
+  initialize() {
+    this.world.generate();
+    this.biomes.generate();
+    this.portals.generate();
+
+    console.log("Mundo generado correctamente");
+  }
+}
+
+new AncientUtopiaQuest();
